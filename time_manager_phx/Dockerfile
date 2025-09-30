@@ -31,7 +31,5 @@ WORKDIR /app
 ENV MIX_ENV=prod
 ENV SHELL=/bin/bash
 COPY --from=build /app/_build/prod/rel/chrono_pulse ./
-COPY entrypoint.sh ./
-RUN chmod +x ./entrypoint.sh
-ENTRYPOINT ["./entrypoint.sh"]
+# Start Phoenix release directly
 CMD ["bin/chrono_pulse", "start"]
